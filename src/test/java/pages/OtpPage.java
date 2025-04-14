@@ -1,6 +1,7 @@
 package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,6 +17,9 @@ public class OtpPage extends BrowserDriver {
     public static String btnResendCode = "//div[@class=\"login-register-right-resend-text\"]";
     public static String lblPinPageHeader = "//div[text()=\"Masukkan PIN Kamu\"]";
 
+    public OtpPage(WebDriver driver) {
+        this.driver = driver;
+    }
     public static void assertOtpPageDisplayed() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(lblOtpPageHeader)));

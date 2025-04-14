@@ -2,6 +2,7 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,9 +27,11 @@ public class LoginPage extends BrowserDriver {
     public static String tfOtpSms = "//div[@data-testid=\"login-method-sms\"]";
     public static String btnChoose = "//button[@data-content=\"Pilih\"]";
 
-
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+    }
     public static void assertLoginPageDisplayed() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(lblLoginHeader)));
         Assert.assertTrue((driver.findElement(By.xpath(lblLoginHeader)).isDisplayed()));
         Assert.assertTrue((driver.findElement(By.xpath(btnBackButton)).isDisplayed()));

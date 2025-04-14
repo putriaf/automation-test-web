@@ -23,7 +23,7 @@ public class BrowserDriver {
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
 
-            driver.get("https://www.example.com/");
+            driver.get("https://bibit.id/");
         }
     }
 

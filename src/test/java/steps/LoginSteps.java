@@ -10,17 +10,19 @@ import pages.OtpPage;
 import pages.HomePage;
 import pages.ProductDetailPage;
 
+import static utilities.BrowserDriver.driver;
+
 public class LoginSteps {
     String phoneNumber = "081284109204";
     String OTP = "1111";
     String PIN = "181201";
     String productName = "Jarvis";
 
-    LandingPage landingPage = new LandingPage();
-    LoginPage loginPage = new LoginPage();
-    OtpPage otpPage = new OtpPage();
-    HomePage homePage = new HomePage();
-    ProductDetailPage productDetailPage = new ProductDetailPage();
+    LandingPage landingPage = new LandingPage(driver);
+    LoginPage loginPage = new LoginPage(driver);
+    OtpPage otpPage = new OtpPage(driver);
+    HomePage homePage = new HomePage(driver);
+    ProductDetailPage productDetailPage = new ProductDetailPage(driver);
 
 
     @Given("^User on Bibit Homepage$")

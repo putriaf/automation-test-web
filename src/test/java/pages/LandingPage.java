@@ -2,6 +2,7 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import utilities.BrowserDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,6 +12,10 @@ import java.time.Duration;
 public class LandingPage extends BrowserDriver {
 
     public static String btnLogin = "//*[contains(@class, 'navbarItem')][text()='Login']";
+
+    public LandingPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     public static void assertLoginBtnDisplayed() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
